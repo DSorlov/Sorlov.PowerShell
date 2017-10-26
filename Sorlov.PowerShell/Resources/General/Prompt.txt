@@ -1,0 +1,24 @@
+﻿function global:prompt
+{
+    $titleString = "{2} [{0}@{1}]" -f [System.Security.Principal.WindowsIdentity]::GetCurrent().Name, [System.Net.Dns]::GetHostName(), $(Get-History -Count 1 | Select -Expand Commandline)
+    (Get-Host).UI.RawUI.WindowTitle = $titleString
+
+	if ($NestedPromptLevel -ge 1)
+	{
+		Write-Host "[" -NoNewline -ForegroundColor Yellow
+		Write-Host $NestedPromptLevel -NoNewline -ForegroundColor White
+		Write-Host "]" -NoNewline -ForegroundColor Yellow
+	}
+
+    Write-Host ("$(Get-Location)") -NoNewline -ForegroundColor White 
+    if (Get-AdminStatus) 
+    {
+	    Write-Host ("#") -NoNewline -ForegroundColor Red 
+    }
+    else
+    {
+	    Write-Host ("$") -NoNewline -ForegroundColor Green 
+    }
+
+    return " "
+}

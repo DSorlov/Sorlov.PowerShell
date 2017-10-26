@@ -1,0 +1,19 @@
+﻿<%
+
+#
+# This block is automatically inserted when using ConvertTo-HTApp
+#
+# $App is the application context.
+# $Document is the htmlDocument context
+#
+
+$App.Title ="$TITLE$"
+$App.Width = $WIDTH$
+$App.Height = $HEIGHT$
+
+#
+# This is also a good place to define all functions that should be called from
+# the JavaScript PSRuntime compability layer.
+#
+
+%>
