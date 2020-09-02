@@ -220,19 +220,22 @@ namespace Sorlov.PowerShell.Cmdlets
         }
         #endregion
 
+        private string FixPath(string inputPath) {
+            if (inputPath.StartsWith(@".\"))
+                inputPath = System.IO.Path.Combine(this.CurrentProviderLocation("FileSystem").ProviderPath, inputPath.Substring(2));
+            else
+                inputPath = System.IO.Path.Combine(this.CurrentProviderLocation("FileSystem").ProviderPath, inputPath);
+
+            return System.IO.Path.GetFullPath(inputPath);
+
+        }
 
         #region "ProcessRecord"
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
 
-            if (sourceFile.StartsWith(@".\"))
-                sourceFile = System.IO.Path.Combine(this.CurrentProviderLocation("FileSystem").ProviderPath, sourceFile.Substring(2));
-            else
-                sourceFile = System.IO.Path.Combine(this.CurrentProviderLocation("FileSystem").ProviderPath, sourceFile);
-
-            sourceFile = System.IO.Path.GetFullPath(sourceFile);
-
+            sourceFile = FixPath(sourceFile);
             if (!System.IO.File.Exists(sourceFile))
             {
                 WriteError(new ErrorRecord(new FileNotFoundException(string.Format("File {0} not found", sourceFile)), "100", ErrorCategory.OpenError, sourceFile));
@@ -241,13 +244,7 @@ namespace Sorlov.PowerShell.Cmdlets
 
             if (outputName != string.Empty)
             {
-                if (outputName.StartsWith(@".\"))
-                    outputName = System.IO.Path.Combine(this.CurrentProviderLocation("FileSystem").ProviderPath, outputName.Substring(2));
-                else
-                    outputName = System.IO.Path.Combine(this.CurrentProviderLocation("FileSystem").ProviderPath, outputName);
-
-                outputName = System.IO.Path.GetFullPath(outputName);
-
+                outputName = FixPath(outputName);
                 if (System.IO.File.Exists(outputName))
                 {
                     if (noClobber)
@@ -284,12 +281,7 @@ namespace Sorlov.PowerShell.Cmdlets
 
             if (iconPath != string.Empty)
             {
-                if (iconPath.StartsWith(@".\"))
-                    iconPath = System.IO.Path.Combine(this.CurrentProviderLocation("FileSystem").ProviderPath, iconPath.Substring(2));
-                else
-                    iconPath = System.IO.Path.Combine(this.CurrentProviderLocation("FileSystem").ProviderPath, iconPath);
-
-                iconPath = System.IO.Path.GetFullPath(iconPath);
+                iconPath = FixPath(iconPath);
 
                 if (!System.IO.File.Exists(iconPath))
                 {
@@ -317,6 +309,7 @@ namespace Sorlov.PowerShell.Cmdlets
                 ((ServiceData)appData).Description = serviceDesc;
                 ((ServiceData)appData).ServiceName = serviceName;
                 ((ServiceData)appData).DisplayName = serviceDisplay;
+
             }
             else
             {

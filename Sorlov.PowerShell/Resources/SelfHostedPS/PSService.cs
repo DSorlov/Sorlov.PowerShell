@@ -77,6 +77,7 @@ namespace Sorlov.SelfHostedPS.Service
                 }
 
             RunScript(Common.GetScript("ScriptData"));
+            RunScript("if (Get-Command OnStart -ea SilentlyContinue) { OnStart }");
             RunScript("Main");
 
             lock (psLocker)
@@ -101,9 +102,10 @@ namespace Sorlov.SelfHostedPS.Service
         }
 
 
-        public void StopInternal()
+        public void StopInternal(string callMethod)
         {
             mainPipe.Stop();
+            RunScript("if (Get-Command OnStop -ea SilentlyContinue) { OnStop('"+callMethod+"') }");
         }
 
         protected override void OnStart(string[] args)
@@ -113,12 +115,12 @@ namespace Sorlov.SelfHostedPS.Service
 
         protected override void OnStop()
         {
-            StopInternal();
+            StopInternal("OnStop");
         }
 
         protected override void OnShutdown()
         {
-            StopInternal();
+            StopInternal("OnShutdown");
         }
 
         protected static bool IsServiceInstalled()
