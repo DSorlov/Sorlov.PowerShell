@@ -26,7 +26,6 @@ namespace Sorlov.PowerShell.Cmdlets
         private Type lastObject;
         private TableDesign tableStyle = TableDesign.MediumList1Accent1;
         private string parFormat = "Word2007";
-        private MemoryStream templateStream;
 
         private DocX wordDocument;
         private Table currentTable;

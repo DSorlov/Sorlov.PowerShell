@@ -6,7 +6,6 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
 using Microsoft.Win32;
-using RGiesecke.DllExport;
 using Sorlov.PowerShell.Lib.Core.Attributes;
 using Sorlov.PowerShell.Lib.HTApps;
 

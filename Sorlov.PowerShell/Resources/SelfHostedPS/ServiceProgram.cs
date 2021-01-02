@@ -50,7 +50,7 @@ namespace Sorlov.SelfHostedPS.Service
 
                     ConsoleHandler.WriteLine("");
                     ConsoleHandler.WriteLine("Exiting...");
-                    app.StopInternal();
+                    app.StopInternal("OnStop");
                     ConsoleHandler.WriteLine("");
                 }
                 else if (commandline["install"] == "true")

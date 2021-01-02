@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: C:\Users\k.gosse\.nuget\packages\unmanagedexports.repack\1.0.0\tasks\RGiesecke.DllExport.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E0D71AA7-AEB8-45F2-9304-6AD6C03AB4AE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>RGiesecke.DllExport</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <ApplicationVersion>1.2.7.38850</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>RGiesecke.DllExport</RootNamespace>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Cecil, Version=0.9.5.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DllExportServiceProviderExtensions.cs" />
+    <Compile Include="DllExportVersion.cs" />
+    <Compile Include="Null.cs" />
+    <Compile Include="Set.cs" />
+    <Compile Include="DllExportLogginCodes.cs" />
+    <Compile Include="GenericDisposable.cs" />
+    <Compile Include="NotificationContext.cs" />
+    <Compile Include="IDllExportNotifier.cs" />
+    <Compile Include="AssemblyBinaryProperties.cs" />
+    <Compile Include="AssemblyExports.cs" />
+    <Compile Include="CpuPlatform.cs" />
+    <Compile Include="DllExportNotificationEventArgs.cs" />
+    <Compile Include="DllExportNotifier.cs" />
+    <Compile Include="DllExportWeaver.cs" />
+    <Compile Include="DuplicateExports.cs" />
+    <Compile Include="IExportAssemblyInspector.cs" />
+    <Compile Include="ExportAssemblyInspector.cs" />
+    <Compile Include="ExportedClass.cs" />
+    <Compile Include="IExportInfo.cs" />
+    <Compile Include="ExportInfo.cs" />
+    <Compile Include="ExportedMethod.cs" />
+    <Compile Include="ExtractExportHandler.cs" />
+    <Compile Include="IInputValues.cs" />
+    <Compile Include="InputValuesCore.cs" />
+    <Compile Include="SourceCodePosition.cs" />
+    <Compile Include="SourceCodeRange.cs" />
+    <Compile Include="Utilities.cs" />
+    <Compile Include="ValueDisposable.cs" />
+    <Compile Include="Parsing\HasServiceProvider.cs" />
+    <Compile Include="Parsing\IlParser.cs" />
+    <Compile Include="Parsing\DllExportNotifierWrapper.cs" />
+    <Compile Include="Parsing\IlToolBase.cs" />
+    <Compile Include="Parsing\ILAsm.cs" />
+    <Compile Include="Parsing\ILDasm.cs" />
+    <Compile Include="Parsing\ParserState.cs" />
+    <Compile Include="Parsing\Regexes.Designer.cs" />
+    <Compile Include="Parsing\Actions\IlParsingUtils.cs" />
+    <Compile Include="Parsing\Actions\ParsingDirection.cs" />
+    <Compile Include="Parsing\Actions\ExternalAssemlyDeclaration.cs" />
+    <Compile Include="Parsing\Actions\IParserStateAction.cs" />
+    <Compile Include="Parsing\Actions\ClassDeclarationParserAction.cs" />
+    <Compile Include="Parsing\Actions\ClassParserAction.cs" />
+    <Compile Include="Parsing\Actions\DeleteExportAttributeParserAction.cs" />
+    <Compile Include="Parsing\Actions\MethodDeclarationParserAction.cs" />
+    <Compile Include="Parsing\Actions\MethodParserAction.cs" />
+    <Compile Include="Parsing\Actions\MethodPropertiesParserAction.cs" />
+    <Compile Include="Parsing\Actions\NormalParserAction.cs" />
+    <Compile Include="Parsing\Actions\ParserStateActionAttribute.cs" />
+    <Compile Include="Parsing\Actions\ParserStateValues.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Properties\Settings.Designer.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Parsing\Regexes.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

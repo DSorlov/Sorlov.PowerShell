@@ -67,10 +67,6 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.IdentityModel.6.1.7600.16394\lib\net35\Microsoft.IdentityModel.dll</HintPath>
     </Reference>
-    <Reference Include="RGiesecke.DllExport.Metadata, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8f52d83c1a22df51, processorArchitecture=MSIL">
-      <HintPath>..\packages\UnmanagedExports.1.2.7\lib\net\RGiesecke.DllExport.Metadata.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
@@ -246,6 +242,45 @@
     </Compile>
     <Compile Include="Lib\Application\CallerProxy.cs" />
     <Compile Include="Lib\Application\CallerProxyEventArgs.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\crc32.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\EncodingFoundException.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\HtmlAttribute.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\HtmlAttributeCollection.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\HtmlCmdLine.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\HtmlCommentNode.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\HtmlConsoleListener.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\HtmlDocument.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\HtmlDocument.PathMethods.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\HtmlDocument.Xpath.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\HtmlElementFlag.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\HtmlEntity.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\HtmlNameTable.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\HtmlNode.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\HtmlNode.Encapsulator.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\HtmlNode.Xpath.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\HtmlNodeCollection.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\HtmlNodeNavigator.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\HtmlNodeType.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\HtmlParseError.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\HtmlParseErrorCode.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\HtmlTextNode.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\HtmlWeb.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\HtmlWeb.Xpath.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\HtmlWebException.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\InvalidProgramException.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\IOLibrary.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\MimeTypeMap.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\MixedCodeDocument.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\MixedCodeDocumentCodeFragment.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\MixedCodeDocumentFragment.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\MixedCodeDocumentFragmentList.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\MixedCodeDocumentFragmentType.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\MixedCodeDocumentTextFragment.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\NameValuePair.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\NameValuePairList.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\Trace.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\Trace.FullFramework.cs" />
+    <Compile Include="Lib\HtmlAgilityPack\Utilities.cs" />
     <Compile Include="Lib\MicrosoftLive\Controls\LiveConnectSessionChangedEventArgs.cs" />
     <Compile Include="Lib\MicrosoftLive\Controls\SignInDialog.cs">
       <SubType>Form</SubType>
@@ -322,7 +357,6 @@
     <Compile Include="CmdLets\GetAdminStatus.cs" />
     <Compile Include="CmdLets\RestartPowerShell.cs" />
     <Compile Include="CmdLets\InvokeElevated.cs" />
-    <Compile Include="CmdLets\ExitPSEnviroment.cs" />
     <Compile Include="Lib\Application\ApplicationData.cs" />
     <Compile Include="Lib\Application\Compiler.cs" />
     <Compile Include="Lib\Application\Framework.cs" />
@@ -1576,42 +1610,6 @@
     </Compile>
     <Compile Include="Lib\Network\HostFileHandler.cs" />
     <Compile Include="Lib\HTApps\HTAppFiles.cs" />
-    <Compile Include="Lib\HtmlAgilityPack\crc32.cs" />
-    <Compile Include="Lib\HtmlAgilityPack\EncodingFoundException.cs" />
-    <Compile Include="Lib\HtmlAgilityPack\HtmlAttribute.cs" />
-    <Compile Include="Lib\HtmlAgilityPack\HtmlAttributeCollection.cs" />
-    <Compile Include="Lib\HtmlAgilityPack\HtmlCmdLine.cs" />
-    <Compile Include="Lib\HtmlAgilityPack\HtmlCommentNode.cs" />
-    <Compile Include="Lib\HtmlAgilityPack\HtmlConsoleListener.cs" />
-    <Compile Include="Lib\HtmlAgilityPack\HtmlDocument.cs" />
-    <Compile Include="Lib\HtmlAgilityPack\HtmlDocument.PathMethods.cs" />
-    <Compile Include="Lib\HtmlAgilityPack\HtmlDocument.Xpath.cs" />
-    <Compile Include="Lib\HtmlAgilityPack\HtmlElementFlag.cs" />
-    <Compile Include="Lib\HtmlAgilityPack\HtmlEntity.cs" />
-    <Compile Include="Lib\HtmlAgilityPack\HtmlNameTable.cs" />
-    <Compile Include="Lib\HtmlAgilityPack\HtmlNode.cs" />
-    <Compile Include="Lib\HtmlAgilityPack\HtmlNode.Xpath.cs" />
-    <Compile Include="Lib\HtmlAgilityPack\HtmlNodeCollection.cs" />
-    <Compile Include="Lib\HtmlAgilityPack\HtmlNodeNavigator.cs" />
-    <Compile Include="Lib\HtmlAgilityPack\HtmlNodeType.cs" />
-    <Compile Include="Lib\HtmlAgilityPack\HtmlParseError.cs" />
-    <Compile Include="Lib\HtmlAgilityPack\HtmlParseErrorCode.cs" />
-    <Compile Include="Lib\HtmlAgilityPack\HtmlTextNode.cs" />
-    <Compile Include="Lib\HtmlAgilityPack\HtmlWeb.cs" />
-    <Compile Include="Lib\HtmlAgilityPack\HtmlWeb.Xpath.cs" />
-    <Compile Include="Lib\HtmlAgilityPack\HtmlWebException.cs" />
-    <Compile Include="Lib\HtmlAgilityPack\IOLibrary.cs" />
-    <Compile Include="Lib\HtmlAgilityPack\MixedCodeDocument.cs" />
-    <Compile Include="Lib\HtmlAgilityPack\MixedCodeDocumentCodeFragment.cs" />
-    <Compile Include="Lib\HtmlAgilityPack\MixedCodeDocumentFragment.cs" />
-    <Compile Include="Lib\HtmlAgilityPack\MixedCodeDocumentFragmentList.cs" />
-    <Compile Include="Lib\HtmlAgilityPack\MixedCodeDocumentFragmentType.cs" />
-    <Compile Include="Lib\HtmlAgilityPack\MixedCodeDocumentTextFragment.cs" />
-    <Compile Include="Lib\HtmlAgilityPack\NameValuePair.cs" />
-    <Compile Include="Lib\HtmlAgilityPack\NameValuePairList.cs" />
-    <Compile Include="Lib\HtmlAgilityPack\Trace.cs" />
-    <Compile Include="Lib\HtmlAgilityPack\Trace.FullFramework.cs" />
-    <Compile Include="Lib\HtmlAgilityPack\Utilities.cs" />
     <Compile Include="Lib\HTApps\ImageEncoding.cs" />
     <Compile Include="Lib\Core\Impersonator.cs" />
     <Compile Include="Lib\FileSystem\JunctionPoints.cs">
@@ -1971,7 +1969,44 @@
     <PostBuildEvent>
     </PostBuildEvent>
   </PropertyGroup>
-  <Import Project="../packages/UnmanagedExports.1.2.7/tools/RGiesecke.DllExport.targets" Condition="Exists('../packages/UnmanagedExports.1.2.7/tools/RGiesecke.DllExport.targets')" />
+  <PropertyGroup>
+    <DllExportIdent>85217984-202B-4181-9BBD-C6ED6C54746D</DllExportIdent>
+    <DllExportMetaLibName>DllExport.dll</DllExportMetaLibName>
+    <DllExportNamespace>Sorlov.PowerShell</DllExportNamespace>
+    <DllExportDDNSCecil>true</DllExportDDNSCecil>
+    <DllExportSkipOnAnyCpu>false</DllExportSkipOnAnyCpu>
+    <DllExportPlatform>Auto</DllExportPlatform>
+    <DllExportOrdinalsBase>1</DllExportOrdinalsBase>
+    <DllExportGenExpLib>false</DllExportGenExpLib>
+    <DllExportOurILAsm>false</DllExportOurILAsm>
+    <DllExportSysObjRebase>false</DllExportSysObjRebase>
+    <DllExportLeaveIntermediateFiles>false</DllExportLeaveIntermediateFiles>
+    <DllExportTimeout>30000</DllExportTimeout>
+    <DllExportPeCheck>2</DllExportPeCheck>
+    <DllExportPatches>0</DllExportPatches>
+    <DllExportPreProcType>0</DllExportPreProcType>
+    <DllExportPostProcType>0</DllExportPostProcType>
+  </PropertyGroup>
+  <ImportGroup Label=".NET DllExport">
+    <Import Project="$(SolutionDir)packages\DllExport.1.7.3\tools\net.r_eg.DllExport.targets" Condition="Exists($([MSBuild]::Escape('$(SolutionDir)packages\DllExport.1.7.3\tools\net.r_eg.DllExport.targets')))" Label="8337224c9ad9e356" />
+  </ImportGroup>
+  <Target Name="DllExportRestorePkg" BeforeTargets="PrepareForBuild">
+    <Error Condition="!Exists('$(SolutionDir)DllExport.bat')" Text="DllExport.bat is not found. Path: '$(SolutionDir)' - https://github.com/3F/DllExport" />
+    <Exec Condition="('$(DllExportModImported)' != 'true' Or !Exists('$(SolutionDir)packages\DllExport.1.7.3\tools\net.r_eg.DllExport.targets')) And Exists('$(SolutionDir)DllExport.bat')" Command=".\DllExport.bat  -action Restore" WorkingDirectory="$(SolutionDir)" />
+    <MSBuild Condition="'$(DllExportModImported)' != 'true'" Projects="$(SolutionDir)packages\DllExport.1.7.3\tools\net.r_eg.DllExport.targets" Targets="DllExportMetaXBaseTarget" Properties="TargetFramework=$(TargetFramework)">
+      <Output TaskParameter="TargetOutputs" PropertyName="DllExportMetaXBase" />
+    </MSBuild>
+    <ItemGroup>
+      <Reference Include="DllExport, PublicKeyToken=8337224c9ad9e356">
+        <HintPath>$(SolutionDir)packages\DllExport.1.7.3\gcache\$(DllExportMetaXBase)\$(DllExportNamespace)\$(DllExportMetaLibName)</HintPath>
+        <Private>False</Private>
+        <SpecificVersion>False</SpecificVersion>
+      </Reference>
+    </ItemGroup>
+  </Target>
+  <Target Name="DllExportRPkgDynamicImport" BeforeTargets="PostBuildEvent" DependsOnTargets="GetFrameworkPaths" Condition="'$(DllExportModImported)' != 'true' And '$(DllExportRPkgDyn)' != 'false'">
+    <MSBuild BuildInParallel="true" UseResultsCache="true" Projects="$(MSBuildProjectFullPath)" Properties="DllExportRPkgDyn=true" Targets="Build" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
